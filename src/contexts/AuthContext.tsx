@@ -97,13 +97,28 @@ export function AuthProvider({ children }: AuthProviderProps){
         const parsedData = JSON.parse(savedData);
         
         // Agora, você pode usar os dados recuperados
-        console.log(parsedData.email);
+        console.log(parsedData);
 
         // Faça o que precisar com os dados recuperados, por exemplo, definir em um estado
         // setState(parsedData);
       } else {
         console.log('Nenhum dado encontrado');
       }
+       // Recuperar os dados do localStorage
+       const savedData2 = localStorage.getItem('userData2');
+
+       if (savedData2) {
+         // Converter os dados de volta para o formato desejado (por exemplo, JSON)
+         const parsedData2 = JSON.parse(savedData2);
+         
+         // Agora, você pode usar os dados recuperados
+         console.log(parsedData2);
+ 
+         // Faça o que precisar com os dados recuperados, por exemplo, definir em um estado
+         // setState(parsedData);
+       } else {
+         console.log('Nenhum dado encontrado');
+       }
 
       const response = await api.post('/users', {
         name,
