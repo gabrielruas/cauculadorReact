@@ -64,9 +64,15 @@ export default function SignUp() {
       password,
     }
 
-    await signUp(data)
+   
+
+    // Salve os dados no localStorage
+    localStorage.setItem('userData2', JSON.stringify(data));
 
     setLoading(false);
+
+    // Redirecione para a página /signup
+    window.location.href = '/signup2';
 
   }
 
